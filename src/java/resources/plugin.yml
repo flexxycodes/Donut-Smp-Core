@@ -1,0 +1,92 @@
+name: DonutCoreV2
+version: '1.0.3'
+main: dev.daniboy.donutcore.DonutCore
+api-version: '1.20'
+softdepend:
+  - Vault
+  - Multiverse-Core
+depend:
+  - WorldGuard
+  - WorldEdit
+commands:
+  donutcore:
+    description: Main command for DonutCore.
+    usage: /<command> <subcommand>
+    subcommands:
+      help:
+        description: Open the help GUI.
+        usage: /<command> help
+        permission: donutcore.help
+      reload:
+        description: Reload the plugin.
+        usage: /<command> reload
+        permission: donutcore.reload
+
+  r:
+    description: Reply to a message.
+    usage: /<command> <message>
+    permission: donutcore.reply
+  msg:
+    description: Send a message to a player.
+    usage: /<command> <player> <message>
+    permission: donutcore.msg
+  help:
+    description: Open the help GUI.
+    usage: /help
+    permission: donutcore.help
+    aliases:
+      - guide
+permissions:
+  donutcore.help:
+    description: "Allows access to the help command"
+    default: true
+  donutcore.media:
+    description: "Allows access to the media command"
+    default: true
+  donutcore.rules:
+    description: "Allows access to the rules command"
+    default: true
+  donutcore.spawn:
+    description: "Allows access to the settings command"
+    default: true
+  donutcore.setspawn:
+    description: "Allows access to the settings command"
+    default: true
+  donutcore.msg:
+    description: "Allows access to the msg command"
+    default: true
+  donutcore.msgtoggle:
+    description: "Allows access to the msgtoggle command"
+    default: true
+  donutcore.reply:
+    description: "Allows access to the reply command"
+    default: true
+  donutcore.nightvision:
+    description: "Allows access to the nightvision command"
+    default: op
+  donutcore.afk:
+    description: "Allows access to the afk command"
+    default: true
+  donutcore.setafk:
+    description: "Allows access to the setafk command"
+    default: op
+  donutcore.billford:
+    description: "Allows access to billford command"
+    default: true
+  donutcore.billfordeditor:
+    description: "Allows access to billfordeditor command"
+    default: op
+  donutcore.pay:
+    description: "Allows access to pay command"
+    default: true
+  donutcore.balance:
+    description: "Allows access to balance command"
+    default: true
+  donutcore.discord:
+    description: "Allows access to discord command"
+    default: true
+  donutcore.store:
+    description: "Allows access to store command"
+    default: true
+libraries:
+  - com.zaxxer:HikariCP:5.1.0
