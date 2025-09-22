@@ -1,0 +1,35 @@
+name: Maven Build
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout repo
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Set up JDK (Java 21 for MC 1.21.4, change to 17 if your server uses Java 17)
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          cache: maven
+
+      # Build with Maven
+      - name: Build with Maven
+        run: mvn -B clean package --file pom.xml
+
+      # Upload built JAR as GitHub Action artifact
+      - name: Upload plugin JAR
+        uses: actions/upload-artifact@v4
+        with:
+          name: DonutCore
+          path: target/DonutCore-*.jar
