@@ -914,7 +914,7 @@ public final class DonutCore extends JavaPlugin
                 throw new IllegalAccessException();
             }
             this.getLogger().severe(xlnoigleho(cniexdbfyewsxht(), rmdqikusoembxnk(), 0x33EBA81E ^ n));
-            this.getServer().getPluginManager().disablePlugin((Plugin)this);
+           // this.getServer().getPluginManager().disablePlugin((Plugin)this);
         }
         UpperStackLicense.hexItem(this);
     }
